@@ -1,0 +1,19 @@
+{
+  "name": "RISUU MINI BOT 109",
+  "description": "109 verified WhatsApp commands with animated replies and a pairing dashboard",
+  "keywords": ["whatsapp", "baileys", "bot", "risuu"],
+  "success_url": "/",
+  "env": {
+    "BOT_NAME": { "description": "Bot display name", "value": "RISUU MINI BOT" },
+    "OWNER_NUMBER": { "description": "Owner number with country code, no +", "required": true },
+    "PAIR_NUMBER": { "description": "Number to pair, with country code", "required": false },
+    "SESSION_ID": { "description": "Optional old Mega session id/link or RISUU_SESSION base64", "required": false },
+    "PREFIX": { "description": "Command prefix", "value": "." },
+    "MODE": { "description": "public, private, groups or inbox", "value": "public" },
+    "ANIMATIONS": { "description": "Animated replies: 1 or 0", "value": "1" },
+    "WELCOME": { "description": "Animated group welcome: 1 or 0", "value": "1" },
+    "GEMINI_API_KEY": { "description": "Optional key for .ai", "required": false }
+  },
+  "buildpacks": [{ "url": "https://github.com/heroku/heroku-buildpack-nodejs.git" }],
+  "stack": "heroku-24"
+}

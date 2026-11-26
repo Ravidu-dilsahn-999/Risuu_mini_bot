@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="si">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#080515" />
+  <title>RISUU MINI BOT · 109 Control Deck</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2218%22 fill=%22%23080515%22/><text x=%2232%22 y=%2244%22 text-anchor=%22middle%22 font-size=%2238%22 fill=%22%23ff8fc7%22>R</text></svg>" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body data-view="home" data-status="booting">
+  <div class="sky" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="beam beam-a"></div><div class="beam beam-b"></div><div class="mesh"></div>
+
+  <div class="app-shell">
+    <aside class="rail">
+      <div class="brand">
+        <div class="brand-mark"><span>R</span></div>
+        <div><b>RISUU</b><strong>MINI BOT</strong><small>109 CONTROL DECK</small></div>
+      </div>
+      <nav id="nav">
+        <button class="nav-btn active" data-view="home"><span>◈</span> Home</button>
+        <button class="nav-btn" data-view="connect"><span>⌁</span> Connect</button>
+        <button class="nav-btn" data-view="commands"><span>109</span> Commands</button>
+        <button class="nav-btn" data-view="lab"><span>✦</span> Test Lab</button>
+        <button class="nav-btn" data-view="settings"><span>⚙</span> Settings</button>
+        <button class="nav-btn" data-view="logs"><span>≋</span> Live Logs</button>
+      </nav>
+      <div class="rail-foot">
+        <div><span>ENGINE</span><b>Baileys 7</b></div>
+        <div><span>COMMANDS</span><b id="sideCount">109/109</b></div>
+        <div><span>WA WEB</span><b id="waVersion">detecting</b></div>
+      </div>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <div><small>RISUU / <span id="crumb">HOME</span></small><h1 id="pageTitle">System Online</h1></div>
+        <div class="status-wrap"><div class="status" id="status"><i></i><span id="statusText">Booting</span></div><div class="clock" id="uptime">0s</div></div>
+      </header>
+
+      <section class="view active" id="view-home">
+        <article class="hero">
+          <div class="hero-copy">
+            <div class="eyebrow"><i></i> WHATSAPP AUTOMATION · REBUILT</div>
+            <h2>RISUU <em>109</em></h2>
+            <p>Fake menu එකක් නෙවෙයි. Real command handlers 109ක්, animated WhatsApp replies, live verification සහ current pairing engine එකක්.</p>
+            <div class="actions"><button class="btn hot" data-go="connect">Connect WhatsApp</button><button class="btn glass" data-go="lab">Run 109 Test</button></div>
+          </div>
+          <div class="reactor"><div class="orbit one"></div><div class="orbit two"></div><div class="core">R</div></div>
+        </article>
+        <div class="metrics">
+          <article><i>⌘</i><span>COMMANDS</span><b id="metricCommands">109</b><small>real handlers</small></article>
+          <article><i>↔</i><span>MESSAGES</span><b id="metricMessages">0</b><small>received</small></article>
+          <article><i>⚡</i><span>RUNS</span><b id="metricRuns">0</b><small>commands executed</small></article>
+          <article><i>◷</i><span>UPTIME</span><b id="metricUptime">0s</b><small>current process</small></article>
+        </div>
+        <div class="split">
+          <article class="panel feature-panel"><div class="panel-title"><h3>Rebuild Status</h3><span>V2.0</span></div><ul><li><i>01</i><div><b>109 verified commands</b><small>Core, utility, text, fun, media, group and owner.</small></div></li><li><i>02</i><div><b>Current connection engine</b><small>Dynamic WA version, QR, phone pairing and reconnect.</small></div></li><li><i>03</i><div><b>Animated replies</b><small>Every text command renders through a live edit sequence.</small></div></li></ul></article>
+          <article class="panel terminal"><div class="panel-title"><h3>Activity Stream</h3><span class="live">LIVE</span></div><div class="log-list" id="homeLogs"></div></article>
+        </div>
+      </section>
+
+      <section class="view" id="view-connect">
+        <article class="panel connect-card">
+          <div class="panel-title"><h3>Link WhatsApp</h3><span>QR · PHONE CODE</span></div>
+          <div class="connect-grid">
+            <div>
+              <label for="phone">WhatsApp number with country code</label>
+              <div class="field-row"><input id="phone" inputmode="tel" placeholder="94771234567" /><button class="btn hot" id="pairBtn">Get Code</button></div>
+              <p class="hint">WhatsApp → Linked devices → Link with phone number</p>
+              <div class="pair-code"><small>PAIRING CODE</small><b id="pairCode">— — — — — — — —</b><span id="pairHint">Enter your number to create a code</span></div>
+              <ol><li><b>1</b>Open Linked devices</li><li><b>2</b>Choose Link with phone number</li><li><b>3</b>Enter the animated code above</li></ol>
+            </div>
+            <div class="qr-zone"><div class="qr-box"><img id="qr" alt="WhatsApp QR" /><span id="qrEmpty">QR will appear here</span><i></i></div><p>QR refreshes automatically until connected.</p></div>
+          </div>
+        </article>
+        <article class="panel send-card"><div class="panel-title"><h3>Quick Send</h3><span>DASHBOARD → WHATSAPP</span></div><div class="field-row"><input id="sendJid" placeholder="9477... or group JID" /><input id="sendText" placeholder="Message" /><button class="btn hot" id="sendBtn">Send</button></div></article>
+      </section>
+
+      <section class="view" id="view-commands">
+        <article class="panel command-panel"><div class="panel-title"><h3>109 Command Matrix</h3><span id="commandTotal">109/109</span></div><div class="filters"><input id="search" placeholder="Search commands..." /><div id="chips"></div></div><div class="command-grid" id="commandGrid"></div></article>
+      </section>
+
+      <section class="view" id="view-lab">
+        <article class="panel lab-card"><div class="panel-title"><h3>Command Test Lab</h3><span>NO WHATSAPP REQUIRED</span></div><div class="lab-controls"><b id="prefix">.</b><input id="labCommand" value="alive" placeholder="command" /><input id="labArgs" placeholder="arguments" /><button class="btn hot" id="runBtn">Run</button><button class="btn glass" id="verifyBtn">Verify 109</button></div><div class="verify-bar"><i id="verifyFill"></i></div><p id="verifyText"></p><div class="phone"><div class="phone-head"><span>RISUU MINI BOT</span><i>online</i></div><div class="chat" id="preview"><p>Run a command to preview its reply.</p></div></div></article>
+      </section>
+
+      <section class="view" id="view-settings">
+        <article class="panel settings-card"><div class="panel-title"><h3>Runtime Settings</h3><span>LIVE</span></div>
+          <label class="setting"><div><b>Animated replies</b><small>Three-stage edit animation for every command.</small></div><input type="checkbox" id="animations" checked /><i></i></label>
+          <label class="setting"><div><b>Group welcome</b><small>Animated welcome when participants join.</small></div><input type="checkbox" id="welcome" checked /><i></i></label>
+          <label class="setting"><div><b>Auto read messages</b><small>Mark incoming chats as read.</small></div><input type="checkbox" id="autoRead" /><i></i></label>
+          <label class="setting"><div><b>Auto read status</b><small>Mark incoming WhatsApp statuses as read.</small></div><input type="checkbox" id="autoStatusRead" /><i></i></label>
+          <div class="setting text-setting"><div><b>Prefix</b><small>Maximum 3 characters.</small></div><input id="setPrefix" maxlength="3" value="." /></div>
+          <div class="setting text-setting"><div><b>Mode</b><small>Who can use the bot.</small></div><select id="mode"><option>public</option><option>private</option><option>groups</option><option>inbox</option></select></div>
+          <div class="setting"><div><b>Restart connection</b><small>Reconnect without stopping the dashboard.</small></div><button class="btn glass" id="restartBtn">Restart</button></div>
+        </article>
+      </section>
+
+      <section class="view" id="view-logs"><article class="panel logs-card"><div class="panel-title"><h3>Live Runtime Logs</h3><span class="live">STREAMING</span></div><div class="log-list full" id="logs"></div></article></section>
+    </main>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
